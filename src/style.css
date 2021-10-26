@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #1B1B1B;
+}
+
+@font-face {
+  font-family: 'HelveticaNowDisplay';
+  src: url('./HelveticaNowDisplay-Light.otf');
+}
+
+.container {
+  max-width: 1720px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.sectionSpacing {
+  padding: 0 8rem;
+}
+
+@media (max-width: 990px) {
+  .sectionSpacing {
+    padding: 0 4rem;
+  }
+  .hero, .twoColumns {
+    flex-direction: column !important;
+  }
+  .hero > div:first-child, .hero > div:nth-child(2) {
+    width: 100% !important;
+  }
+  .hero > div:first-child {
+    padding-bottom: 4rem;
+  }
+  .heroImageMobile {
+    width: 100%;
+  }
+}
+
+.darkBackground {
+  background: var(--primary-color);
+}
+
+.splitBackground {
+  padding-top: 2.5rem;
+  background: url('./splitBackground.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: flex-start;
+  padding: 1.5rem 0;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: 'HelveticaNowDisplay';
+}
+
+.hero > div:first-child {
+  width: 32%;
+}
+
+.hero > div:nth-child(2) {
+  width: 68%;
+}
+
+.hero h1 {
+  color: white;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 40px;
+  text-align: left;
+  font-weight: 100;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+@media (min-width:1440px) {
+  .hero > div:nth-child(1) {
+    padding-right: 10rem;
+  }
+  .hero h1 {
+    font-size: 50px;
+  }
+}
+
+p {
+  font-size: 25px;
+  font-weight: 300;
+  color: var(--primary-color);
+}
+
+.textSpacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.headerSpacing {
+  padding-bottom: 4rem;
+}
+
+.twoColumns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.twoColumns > div {
+  position: relative;
+}
+
+.playButton {
+  position: absolute;
+  bottom: 8rem;
+  left: 28rem;
+  cursor: pointer;
+}
+
+.playButton:hover {
+  filter: invert(20%) sepia(41%) saturate(5756%) hue-rotate(342deg) brightness(102%) contrast(101%);
+  /* transition: 0.1s ease-in; */
+}
+
+
+@media (max-width: 990px) {
+  .movieStill {
+    width: calc(100vw - 120px);
+  }
+}
+
+@media (min-width: 990px) {
+  .movieStill {
+    width: 575px;
+  }
+  .twoColumns {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
