@@ -1,6 +1,5 @@
 import tenlogo from './tenlogo.svg';
 import './style.css';
-import { Router, Route, Switch } from "react-router";
 
 
 function Header() {

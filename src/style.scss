@@ -1,0 +1,124 @@
+body {
+  font-family: 'HelveticaNowDisplay';
+  p {
+    font-size: 25px;
+    font-weight: 300;
+    color: var(--primary-color);
+  }
+}
+
+@media (min-width:990px) {
+  .menuItems {
+    a {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width:990px) {
+  .menuItems {
+    a {
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .workControls {
+    top: -6rem !important;
+    .workIdentifier {
+      h1 {
+        font-size: 2rem !important;
+      }
+    }
+  }
+  .carousel.carousel-slider .control-arrow {
+    padding: 2vw;
+  }
+  .control-arrow {
+    padding: 5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: fit-content;
+  }
+  .container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.heroCarousel {
+  .slide img {
+    height: auto;
+  }
+  .control-dots {
+    display: none;
+  }
+  .thumbs.animated {
+    top: -6rem !important;
+  }
+}
+
+.workControls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  top: -35vh;
+  .workIdentifier {
+    p {
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      font-size: 15px;
+      color: white;
+    }
+    h1 {
+      font-style: normal;
+      font-size: 50px;
+      text-transform: none;
+      color: white;
+    }
+    text-align: left;
+  }
+}
+
+.heroOverlay, .heroOverlay2 {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.8) 90%);
+  z-index: 1;
+}
+
+.carousel .control-arrow {
+  opacity: 1 !important;
+  background: rgba(0,0,0,0.2) !important;
+}
+
+.control-arrow {
+  padding: 5rem;
+  margin-top: auto !important;
+  margin-bottom: auto;
+  height: fit-content;
+}
+
+.headerSpacing {
+  padding: 4rem 0;
+}
+
+.newsImage {
+  background-size: cover;
+}
+
+.zeroPadding {
+  padding: 0 !important;
+}

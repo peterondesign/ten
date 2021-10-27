@@ -1,5 +1,6 @@
 :root {
   --primary-color: #1B1B1B;
+  --grey-color: #767676;
 }
 
 @font-face {
@@ -7,13 +8,7 @@
   src: url('./HelveticaNowDisplay-Light.otf');
 }
 
-.container {
-  max-width: 1720px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-}
+
 
 .sectionSpacing {
   padding: 0 8rem;
@@ -93,12 +88,6 @@ h1 {
   }
 }
 
-p {
-  font-size: 25px;
-  font-weight: 300;
-  color: var(--primary-color);
-}
-
 .textSpacing {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -147,3 +136,21 @@ p {
   }
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menuItems .active {
+  color: var(--primary-color);
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--primary-color);
+  transition: ease-in 0.2s;
+}
+
+.menuItems a {
+  color: var(--grey-color);
+  text-decoration: none;
+}
