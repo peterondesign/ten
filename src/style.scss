@@ -1,6 +1,6 @@
 body {
   font-family: 'HelveticaNowDisplay';
-  p {
+  p, a {
     font-size: 25px;
     font-weight: 300;
     color: var(--primary-color);
@@ -19,7 +19,11 @@ body {
 }
 
 @media (max-width:990px) {
+  .header{
+    flex-direction: column;
+  }
   .menuItems {
+    margin-top: 45px;
     a {
       margin-right: 1rem;
       &:last-child {
@@ -115,10 +119,48 @@ body {
   padding: 4rem 0;
 }
 
-.newsImage {
-  background-size: cover;
+.customPadding {
+  &:nth-child(even) {
+  padding-right: 0;
+  padding-left:15px;
+  }
+  &:nth-child(odd) {
+  padding-right: 15px;
+  padding-left:0;
+  }
 }
 
-.zeroPadding {
-  padding: 0 !important;
+@media (max-width:990px) {
+  .customPadding {
+    &:nth-child(even) {
+    padding-right: 0;
+    padding-left:0;
+    }
+    &:nth-child(odd) {
+    padding-right: 0;
+    padding-left:0;
+    }
+  }
+  .customPadding {
+    margin-top: 45px;
+    &:first-child {
+    margin-top: 0;
+  }
+}
+}
+
+.newsImage {
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
+.newsLink {
+  cursor: pointer;
+  &:hover {
+    color: #000;
+    font-weight: 700;
+  }
 }

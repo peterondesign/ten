@@ -5,7 +5,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row } from "reactstrap";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // Images
@@ -96,7 +96,8 @@ function About() {
         <Row>
           <h2 className="headerSpacing">About</h2>
           <p>
-            The Entertainment Network is a production and distribution company founded in 2015 by Chinny Onwugbenu and Genevieve Nnaji. It was set out to tell artisit-driven, authentic African stories. Notable projects include: the Africa Magic Viewers Choice award-winning drama Road to Yesterday, and Netflix's first original Nigeria Film and the national submission for the 92nd Academy Awards. The Entertainment Network plans to establish a Television arm, developing high end drama series with international partners and a diverse range of top level talent.
+            The Entertainment Network is a production and distribution company founded in 2015 by Chinny Onwugbenu and Genevieve Nnaji. It was set out to tell artisit-driven, authentic African stories. Notable projects include: the Africa Magic Viewers Choice award-winning drama Road to Yesterday, and Netflix's first original Nigeria Film and the national submission for the 92nd Academy Awards.<br></br><br></br>
+            The Entertainment Network plans to establish a Television arm, developing high end drama series with international partners and a diverse range of top level talent.
           </p>
         </Row>
       </Container>
@@ -107,42 +108,39 @@ function About() {
 function News() {
   const PublicGoogleSheetsParser = require('public-google-sheets-parser');
   const spreadsheetId = '122sjCTIExZPXPP42dEbdxSOKFux0nWctN0ZMO-xUDoU';
-  const parser = new PublicGoogleSheetsParser(spreadsheetId);
-  parser.parse().then((items) => {
-    items.forEach((items, key) => {
-      console.log(items.newsTitle);
-      <Col md={6} className="zeroPadding">
-          <div className="news">
-            <div className="newsImage"
-            // style="background-image: url();"
-            ></div>
-            <p>{items.newsTitle}</p>
-          </div>
-        </Col>
-    ;
-    })
-  })
+  new PublicGoogleSheetsParser(spreadsheetId).parse()
+  .then((articles)=>{
+    let article = "";
+    articles.forEach(myFunction);
+    function myFunction(value) {
+      article += '<div class="col-md-6 customPadding"><div class="news"> <div class="newsImage" style="background-image: url('+value.newsImage+ ')" ></div> <a href="'+value.newsLink+'" target="_blank">'+value.newsTitle+'</a> </div> </div>'
+      }
+      document.getElementById("articlelist").innerHTML = article;
+  }
+  );
+
 
   return (
     <div>
       <Container>
         <Row>
           <h2 className="headerSpacing">News</h2>
-              <Col md={6} className="zeroPadding">
-            <div className="news">
-              <div className="newsImage"
-              // style="background-image: url();"
-              ></div>
-              <p>Test</p>
-            </div>
-          </Col>
         </Row>
+        </Container>
+      <Container>
+        <div className="row" id="articlelist">
+        </div>
       </Container>
     </div>
   );
 }
 
 function Contact() {
-  return <h2>Contact</h2>;
+  return (
+    <Container>
+      <Row>
+        <h2 className="headerSpacing">Contact</h2>
+      </Row>
+    </Container>);
 }
 
