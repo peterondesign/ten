@@ -154,7 +154,7 @@ function Work() {
         </div>
       </Carousel>
       <Container>
-        <Row className="footer">
+        <Row className="footer workpage">
           <div className="footerLink"><a href="https://www.instagram.com/lionheartthemovie/" target="_blank" rel="noreferrer">Instagram</a></div>
           <div className="footerLink"><a href="mailto:info@tenafrica.tv" target="_blank" rel="noreferrer">Send a Mail</a></div>
           <div className="footerLink"><a href="https://www.linkedin.com/company/ten-africa/" target="_blank" rel="noreferrer">Linkedin</a></div>
@@ -177,6 +177,15 @@ function About() {
           </p>
         </Row>
       </Container>
+      <Container>
+        <Row className="footer">
+          <div className="footerLink"><a href="https://www.instagram.com/lionheartthemovie/" target="_blank" rel="noreferrer">Instagram</a></div>
+          <div className="footerLink"><a href="mailto:info@tenafrica.tv" target="_blank" rel="noreferrer">Send a Mail</a></div>
+          <div className="footerLink"><a href="https://www.linkedin.com/company/ten-africa/" target="_blank" rel="noreferrer">Linkedin</a></div>
+          <div className="footerLink"><a href="https://www.youtube.com/channel/UCzkpf5Cln30JxBFZge1996Q" target="_blank" rel="noreferrer">Youtube</a>
+          </div>
+        </Row>
+      </Container>
     </div>
   );
 }
@@ -193,7 +202,7 @@ function News() {
     let article = "";
     articles.forEach(myFunction);
     function myFunction(value) {
-      article += '<div class="col-md-6 customPadding"><div class="news"> <a href="'+value.newsLink+'" target="_blank" rel="noreferrer"><div class="newsImage" style="background-image: url('+value.newsImage+ ')" ></div> </a><a href="'+value.newsLink+'" target="_blank" rel="noreferrer">'+value.newsTitle+'</a> </div> </div>'
+      article += '<div class="col-md-6 customPadding"><div class="news"> <a href="'+value.newsLink+'" target="_blank" rel="noreferrer"><div class="newsImage" style="background-image: url('+value.newsImage+ ')" ></div> </a><a href="'+value.newsLink+'" target="_blank" rel="noreferrer" class="newsTitle">'+value.newsTitle+'</a> </div> </div>'
       }
       document.getElementById("articlelist").innerHTML = article;
   }
@@ -222,7 +231,6 @@ function Contact() {
       </Row>
       <Row className="contactRow">
         <a href="mailto:info@tenafrica.tv" target="_blank" rel="noreferrer" ><p>info@tenafrica.tv</p></a><br></br>
-        <a href="https://www.instagram.com/lionheartthemovie/" target="_blank" rel="noreferrer" ><p>Instagram.com/lionheartthemovie/</p></a>
       </Row>
     </Container>)
     ;
