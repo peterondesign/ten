@@ -108,10 +108,20 @@ h1 {
 }
 
 .playButton {
-  position: absolute;
-  bottom: 8rem;
-  left: 28rem;
+  position: relative;
+  bottom: 0;
+  right: -25vw;
   cursor: pointer;
+  opacity: 0.8;
+  width: auto;
+
+}
+
+@media (max-width:990px) {
+  .playButton {
+    right: -10px;
+    width: 5rem;
+  }
 }
 
 .playButton:hover {

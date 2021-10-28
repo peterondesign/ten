@@ -7,6 +7,16 @@ body {
   }
 }
 
+@media (min-width:2560px) {
+  .carousel, .carousel *, .carousel .slide img, .heroOverlay, .heroOverlay2{
+    width: auto;
+    box-sizing: initial;
+  }
+  .modal {
+    top: 15%;
+  }
+}
+
 @media (min-width:990px) {
   .menuItems {
     a {
@@ -32,7 +42,7 @@ body {
     }
   }
   .workControls {
-    top: -6rem !important;
+    top: -8rem !important;
     .workIdentifier {
       h1 {
         font-size: 2rem !important;
@@ -131,6 +141,10 @@ body {
 }
 
 @media (max-width:990px) {
+  .heroCarousel {
+    position: relative;
+    top: 7.5vh;
+  }
   .customPadding {
     &:nth-child(even) {
     padding-right: 0;
@@ -162,5 +176,55 @@ body {
   &:hover {
     color: #000;
     font-weight: 700;
+  }
+}
+
+.contactRow {
+  a {
+    display: block;
+    width: 100%;
+    overflow-wrap:break-word;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent !important;
+  border-color:transparent !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.85;
+}
+
+.modal-content {
+  background-color: transparent;
+  text-align: center;
+  h1, p {
+    color: white;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.youtubeFrame {
+  transform: translate(-15%, 0);
+}
+
+.footer {
+  position: relative;
+  top: -50px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media (max-width:990px) {
+  .footer {
+  flex-direction: column;
+  .footerLink {
+      margin-top: 15px;
+    }
   }
 }
